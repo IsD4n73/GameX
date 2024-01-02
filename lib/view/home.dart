@@ -1,6 +1,8 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:gamex/view/tabs/games.dart';
+import 'package:gamex/view/tabs/search.dart';
+import 'package:gamex/view/tabs/widget/error.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,7 +13,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Widget switchTabs(int index) {
-    return const GamesTab();
+    switch (index) {
+      case 0:
+        return const GamesTab();
+      case 1:
+        return const SearchTab();
+      default:
+        return const ErrorTab();
+    }
   }
 
   int selectedTab = 0;
