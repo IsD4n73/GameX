@@ -10,6 +10,7 @@ import 'package:rawg_dart_wrapper/models/game.dart';
 import 'package:super_tooltip/super_tooltip.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:liquid_progress_indicator_v2/liquid_progress_indicator.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 
 class GameDetailsPage extends StatefulWidget {
   final Game game;
@@ -90,7 +91,7 @@ class _GameDetailsPageState extends State<GameDetailsPage> {
                 children: [
                   CardAdaptive("Released: ${widget.game.released}"),
                   const SizedBox(width: 5),
-                  CardAdaptive(
+                  Shimmer( child: CardAdaptive(
                     "Achievements: ${widget.game.achievementsCount}",
                     onTap: () async {
                       EasyLoading.show(status: 'loading...');
@@ -159,7 +160,7 @@ class _GameDetailsPageState extends State<GameDetailsPage> {
                         isSafeArea: true,
                       );
                     },
-                  ),
+                  ),),
                 ],
               ),
               const SizedBox(height: 10),
@@ -209,15 +210,17 @@ class _GameDetailsPageState extends State<GameDetailsPage> {
                 ],
               ),
               const SizedBox(height: 10),
-              CardAdaptive(
-                "Website: ${widget.game.website}",
-                onTap: () async {
-                  if (widget.game.website != "" &&
-                      !await launchUrl(Uri.parse(widget.game.website))) {
-                    EasyLoading.showError("Cannot open url",
+              Shimmer(
+                child: CardAdaptive(
+                  "Website: ${widget.game.website}",
+                  onTap: () async {
+                    if (widget.game.website != "" &&
+                        !await launchUrl(Uri.parse(widget.game.website))) {
+                      EasyLoading.showError("Cannot open url",
                         duration: const Duration(seconds: 3));
-                  }
-                },
+                    }
+                  },
+                ),
               ),
               const SizedBox(height: 10),
               Row(
