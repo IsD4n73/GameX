@@ -9,6 +9,7 @@ import 'package:rawg_dart_wrapper/models/achievement.dart';
 import 'package:rawg_dart_wrapper/models/game.dart';
 import 'package:super_tooltip/super_tooltip.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:liquid_progress_indicator_v2/liquid_progress_indicator.dart';
 
 class GameDetailsPage extends StatefulWidget {
   final Game game;
@@ -218,6 +219,15 @@ class _GameDetailsPageState extends State<GameDetailsPage> {
                   }
                 },
               ),
+              const SizedBox(height: 10),
+              LiquidCircularProgressIndicator(
+                value: widget.game.metacritic / 100,
+                valueColor: AlwaysStoppedAnimation(Colors.pink), 
+                backgroundColor: Color(0xff32323e), 
+                borderColor: Colors.red,
+                borderWidth: 5.0,
+                center: const Text("Metacritic"),
+              ), 
               const SizedBox(height: 10),
             ],
           ),
