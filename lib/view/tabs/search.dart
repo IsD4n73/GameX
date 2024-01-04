@@ -1,7 +1,10 @@
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:rawg_dart_wrapper/rawg_dart_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:gamex/view/tabs/widget/search_bar.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+
+import '../game_details.dart';
 
 class SearchTab extends StatefulWidget {
   const SearchTab({super.key});
@@ -69,7 +72,24 @@ class _SearchTabState extends State<SearchTab> {
             builderDelegate: PagedChildBuilderDelegate<Game>(
               animateTransitions: true,
               itemBuilder: (context, item, index) => InkWell(
-                onTap: () {},
+                onTap: () async {
+                  EasyLoading.show(status: 'loading...');
+                  Game game = await Rawg.getGameDetails(id: item.id);
+
+                  if (!context.mounted) {
+                    EasyLoading.showError('Failed to load game',
+                        duration: const Duration(seconds: 3));
+                    return;
+                  }
+
+                  EasyLoading.dismiss();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GameDetailsPage(game),
+                    ),
+                  );
+                },
                 child: Card(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

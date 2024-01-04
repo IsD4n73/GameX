@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:gamex/view/home.dart';
 import 'package:rawg_dart_wrapper/rawg_dart_wrapper.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff212129)),
         useMaterial3: true,
       ),
+      builder: EasyLoading.init(),
       home: const HomePage(),
     );
   }
