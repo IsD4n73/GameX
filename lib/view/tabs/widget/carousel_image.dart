@@ -2,7 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class CarouselImage extends StatefulWidget {
-  const CarouselImage({super.key});
+  final List<String> screen;
+  const CarouselImage(this.screen, {super.key});
 
   @override
   State<CarouselImage> createState() => _CarouselImageState();
@@ -28,16 +29,26 @@ class _CarouselImageState extends State<CarouselImage> {
                 });
               },
             ),
-            items: [1, 2, 3, 4, 5].map((i) {
+            items: widget.screen.map((i) {
               return Builder(
                 builder: (BuildContext context) {
                   return Container(
-                    width: MediaQuery.of(context).size.width,
                     margin: const EdgeInsets.symmetric(horizontal: 5),
-                    decoration: const BoxDecoration(color: Colors.amber),
-                    child: Text(
-                      'text $i',
-                      style: const TextStyle(fontSize: 16),
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                      child: Image.network(
+                        i,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) =>
+                            const Text("❌"),
+                      ),
                     ),
                   );
                 },
@@ -47,7 +58,7 @@ class _CarouselImageState extends State<CarouselImage> {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [1, 2, 3, 4, 5].asMap().entries.map((entry) {
+          children: widget.screen.asMap().entries.map((entry) {
             return Container(
               width: 8,
               height: 8,

@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color(0xff212129),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xff212129),
         title: const Text(
           "GameX",
