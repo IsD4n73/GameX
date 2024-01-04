@@ -41,7 +41,7 @@ dependencies:
   flutter_easyloading: ^3.0.5
   flutter_widget_from_html_core: ^0.14.10+1
 
-  rawg_dart_wrapper: ^1.0.2
+  rawg_dart_wrapper: ^1.0.1
   
 dev_dependencies:
   flutter_test:
