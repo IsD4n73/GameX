@@ -5,6 +5,8 @@ class ErrorTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Center(
+      child: Text("OPS... :(\n\nSomething is wrong"),
+    );
   }
 }

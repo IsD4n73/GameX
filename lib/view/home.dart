@@ -1,6 +1,8 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:gamex/view/tabs/games.dart';
+import 'package:gamex/view/tabs/genre.dart';
+import 'package:gamex/view/tabs/platform.dart';
 import 'package:gamex/view/tabs/search.dart';
 import 'package:gamex/view/tabs/widget/error.dart';
 
@@ -18,6 +20,10 @@ class _HomePageState extends State<HomePage> {
         return const GamesTab();
       case 1:
         return const SearchTab();
+      case 2:
+        return const PlatformTab();
+      case 3:
+        return const GenreTab();
       default:
         return const ErrorTab();
     }

@@ -1,6 +1,6 @@
-import 'package:RAWG_dart_wrapper/controller/rawg.dart';
 import 'package:flutter/material.dart';
 import 'package:gamex/view/home.dart';
+import 'package:rawg_dart_wrapper/rawg_dart_wrapper.dart';
 
 void main() {
   runApp(const MyApp());

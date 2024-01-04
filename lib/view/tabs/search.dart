@@ -1,4 +1,4 @@
-import 'package:RAWG_dart_wrapper/RAWG_dart_wrapper.dart';
+import 'package:rawg_dart_wrapper/rawg_dart_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:gamex/view/tabs/widget/search_bar.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';

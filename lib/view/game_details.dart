@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:RAWG_dart_wrapper/RAWG_dart_wrapper.dart';
+import 'package:rawg_dart_wrapper/rawg_dart_wrapper.dart';
 
 class GameDetailsPage extends StatefulWidget {
   final Game game;
@@ -7,12 +7,9 @@ class GameDetailsPage extends StatefulWidget {
 
   @override
   State<GameDetailsPage> createState() => _GameDetailsPageState();
-} 
-
+}
 
 class _GameDetailsPageState extends State<GameDetailsPage> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +22,7 @@ class _GameDetailsPageState extends State<GameDetailsPage> {
             color: Colors.white,
           ),
         ),
-      ), 
+      ),
       body: const Placeholder(),
     );
   }
