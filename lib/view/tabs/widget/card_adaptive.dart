@@ -13,7 +13,6 @@ class CardAdaptive extends StatelessWidget {
       onTap: onTap,
       child: Shimmer(
         enabled: shimmer ?? false,
-        interval: Duration(seconds: 2),
         child: Container(
         width: text.contains("Website:") ? double.infinity : 160,
         height: 75,
