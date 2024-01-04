@@ -35,7 +35,6 @@ class _PlatformTabState extends State<PlatformTab> {
         itemBuilder: (context, item, index) => Padding(
           padding: const EdgeInsets.all(10),
           child: ListTile(
-            onTap: () {},
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(25),
@@ -45,7 +44,8 @@ class _PlatformTabState extends State<PlatformTab> {
             title: Text(item.name),
             subtitle: Text("Games: ${item.gamesCount}"),
             trailing: CircleAvatar(
-              foregroundImage: NetworkImage(item.imageBackground),
+              foregroundImage: NetworkImage(
+                  item.image != "" ? item.image : item.imageBackground),
             ),
           ),
         ),

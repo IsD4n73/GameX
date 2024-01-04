@@ -7,6 +7,7 @@ import 'package:gamex/view/tabs/widget/carousel_image.dart';
 import 'package:rawg_dart_wrapper/controller/rawg.dart';
 import 'package:rawg_dart_wrapper/models/achievement.dart';
 import 'package:rawg_dart_wrapper/models/game.dart';
+import 'package:super_tooltip/super_tooltip.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class GameDetailsPage extends StatefulWidget {
@@ -19,6 +20,9 @@ class GameDetailsPage extends StatefulWidget {
 
 class _GameDetailsPageState extends State<GameDetailsPage> {
   List<String> screen = [];
+  final _controllerNames = SuperTooltipController();
+  final _controllerPlatform = SuperTooltipController();
+
   @override
   void initState() {
     Rawg.getScreenshot(gameID: widget.game.id).then((value) {
@@ -163,18 +167,58 @@ class _GameDetailsPageState extends State<GameDetailsPage> {
                 children: [
                   CardAdaptive("Original Name: ${widget.game.nameOriginal}"),
                   const SizedBox(width: 5),
-                  CardAdaptive(
-                      "Alternative Names: ${widget.game.alternativeNames.isEmpty ? "None" : widget.game.alternativeNames.join(",")}"),
+                  SuperTooltip(
+                    controller: _controllerNames,
+                    borderRadius: 20,
+                    hideTooltipOnTap: true,
+                    showBarrier: false,
+                    hasShadow: false,
+                    content: Text(
+                        "Alternative Names: ${widget.game.alternativeNames.isEmpty ? "None" : widget.game.alternativeNames.join(",")}"),
+                    child: CardAdaptive(
+                      "Alternative Names: ${widget.game.alternativeNames.isEmpty ? "None" : widget.game.alternativeNames.join(",")}",
+                      onTap: () {
+                        _controllerNames.showTooltip();
+                      },
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 10),
-              CardAdaptive("Website: ${widget.game.website}", onTap: () async {
-                if (widget.game.website != "" &&
-                    !await launchUrl(Uri.parse(widget.game.website))) {
-                  EasyLoading.showError("Cannot open url",
-                      duration: const Duration(seconds: 3));
-                }
-              }),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CardAdaptive("Play Time: ${widget.game.playtime}h"),
+                  const SizedBox(width: 5),
+                  SuperTooltip(
+                    controller: _controllerPlatform,
+                    borderRadius: 20,
+                    hideTooltipOnTap: true,
+                    showBarrier: false,
+                    hasShadow: false,
+                    content: Text(
+                        "Platforms: ${widget.game.platforms.isEmpty ? "None" : widget.game.platforms.map((e) => "${e.name} ").toString().replaceAll("(", "").replaceAll(")", "")}"),
+                    child: CardAdaptive(
+                      "Platforms: ${widget.game.platforms.isEmpty ? "None" : widget.game.platforms.map((e) => "${e.name} ").toString().replaceAll("(", "").replaceAll(")", "")}",
+                      onTap: () {
+                        _controllerPlatform.showTooltip();
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              CardAdaptive(
+                "Website: ${widget.game.website}",
+                onTap: () async {
+                  if (widget.game.website != "" &&
+                      !await launchUrl(Uri.parse(widget.game.website))) {
+                    EasyLoading.showError("Cannot open url",
+                        duration: const Duration(seconds: 3));
+                  }
+                },
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         ),

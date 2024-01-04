@@ -245,7 +245,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "03759965c3260a81aa2deec77ebfe896e96f38b4"
+      resolved-ref: ec2587809a57804879e651b6f5784ea7ce1f05d8
       url: "https://github.com/IsD4n73/RAWG_dart_wrapper.git"
     source: git
     version: "1.1.0"
@@ -294,6 +294,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  super_tooltip:
+    dependency: "direct main"
+    description:
+      name: super_tooltip
+      sha256: "925bbc20d825922e415e9445b22a41987c10be5812f292b9f8b44c4b3ff16e21"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.7"
   term_glyph:
     dependency: transitive
     description:

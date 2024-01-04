@@ -35,7 +35,6 @@ class _GenreTabState extends State<GenreTab> {
         itemBuilder: (context, item, index) => Padding(
           padding: const EdgeInsets.all(10),
           child: ListTile(
-            onTap: () {},
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(25),
