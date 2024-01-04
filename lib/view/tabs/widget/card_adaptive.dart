@@ -3,7 +3,7 @@ import 'package:shimmer_animation/shimmer_animation.dart';
 
 class CardAdaptive extends StatelessWidget {
   final String text;
-  final bool shimmer;
+  final bool? shimmer;
   final void Function()? onTap;
   const CardAdaptive(this.text, {super.key, this.onTap, this.shimmer});
 
