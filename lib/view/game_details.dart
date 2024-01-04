@@ -220,13 +220,15 @@ class _GameDetailsPageState extends State<GameDetailsPage> {
                 },
               ),
               const SizedBox(height: 10),
-              LiquidCircularProgressIndicator(
-                value: widget.game.metacriticRating / 100,
-                valueColor: AlwaysStoppedAnimation(Colors.pink), 
-                backgroundColor: Color(0xff32323e), 
-                borderColor: Colors.red,
-                borderWidth: 5.0,
-                center: const Text("Metacritic"),
+              SizedBox(
+                width: MediaQuery. of(context). size. width / 2
+                height: 100,
+                child: LiquidCircularProgressIndicator(
+                  value: widget.game.metacriticRating / 100,
+                  valueColor: AlwaysStoppedAnimation(Colors.pink), 
+                  backgroundColor: Color(0xff32323e), 
+                  center: const Text("Metacritic"),
+                ),
               ), 
               const SizedBox(height: 10),
             ],
