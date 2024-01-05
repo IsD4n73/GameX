@@ -224,6 +224,7 @@ class _GameDetailsPageState extends State<GameDetailsPage> {
               
               const SizedBox(height: 10),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center, 
                 children: [
                   SizedBox(
                     width: 100,
