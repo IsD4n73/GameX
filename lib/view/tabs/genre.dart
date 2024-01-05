@@ -32,8 +32,8 @@ class _GenreTabState extends State<GenreTab> {
       shrinkWrap: true,
       builderDelegate: PagedChildBuilderDelegate<Genre>(
         animateTransitions: true, 
-        noItemsFoundIndicatorBuilder: (_) => Center(child: Text("No items found"style: TextStyle(color: Colors.white),),),
-        noMoreItemsIndicatorBuilder: (_) => Center(child: Text("No more items found"style: TextStyle(color: Colors.white),),),
+        noItemsFoundIndicatorBuilder: (_) => Center(child: Text("No items found", style: TextStyle(color: Colors.white),),),
+        noMoreItemsIndicatorBuilder: (_) => Center(child: Text("No more items found", style: TextStyle(color: Colors.white),),),
         itemBuilder: (context, item, index) => Padding(
           padding: const EdgeInsets.all(10),
           child: ListTile(
