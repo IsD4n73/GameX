@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
           bodyText1: TextStyle(),
           bodyText2: TextStyle(),
+          headline6: TextStyle(),
+          headline5: TextStyle(),
+          headline4: TextStyle(),
+          headline3: TextStyle(),
           headline2: TextStyle(),
           headline1: TextStyle(),
         ).apply(
