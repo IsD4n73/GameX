@@ -12,11 +12,7 @@ class CardAdaptive extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(20), 
-      child: Shimmer.fromColors(
-        baseColor: Colors.grey.shade300,
-        highlightColor: Colors.grey.shade100,
-        enabled: shimmer ?? false,
-        child: Container(
+      child: Container(
         width: text.contains("Website:") ? double.infinity : 160,
         height: 75,
         decoration: const BoxDecoration(
@@ -25,14 +21,18 @@ class CardAdaptive extends StatelessWidget {
             Radius.circular(20),
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Center(
-            child: Text(
-              text,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
+        child: Shimmer.fromColors(
+          baseColor: Colors.grey.shade300,
+          highlightColor: Colors.grey.shade100,
+          enabled: shimmer ?? false,
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Center(
+              child: Text(
+                text,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
                 color: Colors.white,
               ),
             ),
