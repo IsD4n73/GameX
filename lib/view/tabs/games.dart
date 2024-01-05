@@ -37,10 +37,10 @@ class _GamesTabState extends State<GamesTab> {
         crossAxisCount: 2,
       ),
       showNewPageProgressIndicatorAsGridChild: false,
-      noItemsFoundIndicatorBuilder: (_) => Center(child: Text("No items found"style: TextStyle(color: Colors.black),),),
-      noMoreItemsIndicatorBuilder: (_) => Center(child: Text("No more items found"style: TextStyle(color: Colors.black),),),
       builderDelegate: PagedChildBuilderDelegate<Game>(
-        animateTransitions: true,
+        animateTransitions: true, 
+        noItemsFoundIndicatorBuilder: (_) => Center(child: Text("No items found"style: TextStyle(color: Colors.white),),),
+        noMoreItemsIndicatorBuilder: (_) => Center(child: Text("No more items found"style: TextStyle(color: Colors.white),),),
         itemBuilder: (context, item, index) => InkWell(
           onTap: () async {
             EasyLoading.show(status: 'loading...');
