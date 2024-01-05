@@ -30,6 +30,8 @@ class _GenreTabState extends State<GenreTab> {
     return PagedListView<int, Genre>(
       pagingController: _pagingController,
       shrinkWrap: true,
+      noItemsFoundIndicatorBuilder: (_) => Center(child: Text("No items found"style: TextStyle(color: Colors.black),),),
+      noMoreItemsIndicatorBuilder: (_) => Center(child: Text("No more items found"style: TextStyle(color: Colors.black),),),    
       builderDelegate: PagedChildBuilderDelegate<Genre>(
         animateTransitions: true,
         itemBuilder: (context, item, index) => Padding(
