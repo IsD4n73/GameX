@@ -231,7 +231,7 @@ class _GameDetailsPageState extends State<GameDetailsPage> {
                     height: 100,
                     child: LiquidCircularProgressIndicator(
                       value: widget.game.metacriticRating / 100,
-                      valueColor: AlwaysStoppedAnimation(Colors.pink), 
+                      valueColor: AlwaysStoppedAnimation(Color(0xFF5156A9)), 
                       backgroundColor: Color(0xff32323e), 
                       center: Text("Metacritic: ${widget.game.metacriticRating}/100", 
                         style: TextStyle(color: Colors.white),
