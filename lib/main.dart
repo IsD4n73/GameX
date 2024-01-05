@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
           bodyText1: TextStyle(),
           bodyText2: TextStyle(),
+          headline2: TextStyle(),
+          headline1: TextStyle(),
         ).apply(
           bodyColor: Colors.white, 
           displayColor: Colors.white, 
