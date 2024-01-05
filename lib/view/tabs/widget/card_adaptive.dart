@@ -12,7 +12,9 @@ class CardAdaptive extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(20), 
-      child: Shimmer(
+      child: Shimmer.fromColors(
+        baseColor: Colors.grey.shade300,
+        highlightColor: Colors.grey.shade100,
         enabled: shimmer ?? false,
         child: Container(
         width: text.contains("Website:") ? double.infinity : 160,
