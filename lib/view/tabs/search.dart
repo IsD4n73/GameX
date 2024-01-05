@@ -71,8 +71,8 @@ class _SearchTabState extends State<SearchTab> {
             showNewPageProgressIndicatorAsGridChild: false,
             builderDelegate: PagedChildBuilderDelegate<Game>(
               animateTransitions: true, 
-              noItemsFoundIndicatorBuilder: (_) => Center(child: Text("No items found"style: TextStyle(color: Colors.white),),),
-              noMoreItemsIndicatorBuilder: (_) => Center(child: Text("No more items found"style: TextStyle(color: Colors.white),),),
+              noItemsFoundIndicatorBuilder: (_) => Center(child: Text("No items found", style: TextStyle(color: Colors.white),),),
+              noMoreItemsIndicatorBuilder: (_) => Center(child: Text("No more items found", style: TextStyle(color: Colors.white),),),
               itemBuilder: (context, item, index) => InkWell(
                 onTap: () async {
                   EasyLoading.show(status: 'loading...');
