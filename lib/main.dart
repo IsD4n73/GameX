@@ -18,20 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff212129)),
         useMaterial3: true,
-        textTheme: TextTheme(
-          bodyText1: TextStyle(),
-          bodyText2: TextStyle(),
-          headline6: TextStyle(),
-          headline5: TextStyle(),
-          headline4: TextStyle(),
-          headline3: TextStyle(),
-          headline2: TextStyle(),
-          headline1: TextStyle(),
-        ).apply(
-          bodyColor: Colors.white, 
-          displayColor: Colors.white, 
-        ), 
-      ),
+     ),
       builder: EasyLoading.init(),
       home: const HomePage(),
     );
