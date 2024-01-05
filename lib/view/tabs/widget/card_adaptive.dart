@@ -11,6 +11,7 @@ class CardAdaptive extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      borderRadius: BorderRadius.circular(20), 
       child: Shimmer(
         enabled: shimmer ?? false,
         child: Container(
