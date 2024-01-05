@@ -30,10 +30,10 @@ class _PlatformTabState extends State<PlatformTab> {
     return PagedListView<int, Platform>(
       pagingController: _pagingController,
       shrinkWrap: true,
-      noItemsFoundIndicatorBuilder: (_) => Center(child: Text("No items found"style: TextStyle(color: Colors.black),),),
-      noMoreItemsIndicatorBuilder: (_) => Center(child: Text("No more items found"style: TextStyle(color: Colors.black),),),
       builderDelegate: PagedChildBuilderDelegate<Platform>(
-        animateTransitions: true,
+        animateTransitions: true, 
+        noItemsFoundIndicatorBuilder: (_) => Center(child: Text("No items found"style: TextStyle(color: Colors.white),),),
+        noMoreItemsIndicatorBuilder: (_) => Center(child: Text("No more items found"style: TextStyle(color: Colors.white),),),
         itemBuilder: (context, item, index) => Padding(
           padding: const EdgeInsets.all(10),
           child: ListTile(
