@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shimmer_animation/shimmer_animation.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CardAdaptive extends StatelessWidget {
   final String text;
