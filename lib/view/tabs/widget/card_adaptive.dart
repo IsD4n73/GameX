@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class CardAdaptive extends StatelessWidget {
   final String text;
@@ -9,11 +9,7 @@ class CardAdaptive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      baseColor: Colors.grey.shade300,
-      highlightColor: Colors.grey.shade100,
-      enabled: shimmer ?? false,
-      child: InkWell(
+    return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(20), 
       child: Container(
@@ -36,10 +32,12 @@ class CardAdaptive extends StatelessWidget {
                color: Colors.white,
            ),
         ),
-       ),
+       
     ),
   ),
-), 
+).animate(onPlay: (controller) => controller.repeat())
+ .shimmer(duration: 1200.ms, color: shimmer ? const Color(0xFF80DDFF) : Colors.transparenr)
+ .animate() 
 );
   }
 }
