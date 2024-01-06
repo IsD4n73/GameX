@@ -21,19 +21,19 @@ class CardAdaptive extends StatelessWidget {
             Radius.circular(20),
           ),
         ),
-        child: Shimmer.fromColors(
-          baseColor: Colors.grey.shade300,
-          highlightColor: Colors.grey.shade100,
-          enabled: shimmer ?? false,
-          child: Padding(
+        child: Padding(
             padding: const EdgeInsets.all(15),
             child: Center(
-              child: Text(
-                text,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                color: Colors.white,
+              child: Shimmer.fromColors(
+                baseColor: Colors.grey.shade300,
+                highlightColor: Colors.grey.shade100,
+                enabled: shimmer ?? false,
+                child: Text(
+                  text,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                  color: Colors.white,
               ),
             ),
           ),
