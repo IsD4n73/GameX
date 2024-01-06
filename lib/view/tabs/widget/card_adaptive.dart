@@ -9,7 +9,11 @@ class CardAdaptive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return Shimmer.fromColors(
+      baseColor: Colors.grey.shade300,
+      highlightColor: Colors.grey.shade100,
+      enabled: shimmer ?? false,
+      child: InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(20), 
       child: Container(
@@ -24,21 +28,18 @@ class CardAdaptive extends StatelessWidget {
         child: Padding(
             padding: const EdgeInsets.all(15),
             child: Center(
-              child: Shimmer.fromColors(
-                baseColor: Colors.grey.shade300,
-                highlightColor: Colors.grey.shade100,
-                enabled: shimmer ?? false,
-                child: Text(
-                  text,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                  color: Colors.white,
-              ),
-            ),
-          ),
+              child: Text(
+              text,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+               color: Colors.white,
+           ),
         ),
-      ),),
-    );
+       ),
+    ),
+  ),
+), 
+);
   }
 }
