@@ -36,7 +36,7 @@ class CardAdaptive extends StatelessWidget {
     ),
   ),
 ).animate(onPlay: (controller) => controller.repeat())
- .shimmer(duration: 1200.ms, color: shimmer ? const Color(0xFF80DDFF) : Colors.transparenr)
+ .shimmer(duration: 1200.ms, color: shimmer ? const Color(0xFF80DDFF) : Colors.transparent)
  .animate() 
 );
   }
