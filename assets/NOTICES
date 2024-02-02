@@ -7267,6 +7267,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 --------------------------------------------------------------------------------
 flutter_lints
+flutter_shaders
 plugin_platform_interface
 url_launcher
 url_launcher_android
